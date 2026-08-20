@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "arud-skill"
+version = "1.0.0"
+description = "Comprehensive Arabic Prosody, Metric Scansion, and Rhyme Analysis Skill for AI Agents"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Chouaieb Nemri", email = "nemri@google.com" }
+]
+keywords = [
+    "arabic",
+    "prosody",
+    "arud",
+    "poetry",
+    "qafiyah",
+    "nlp",
+    "farahidi",
+    "scansion",
+    "ai-agent",
+    "skill"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "pyarud>=1.0.0",
+]
+
+[project.scripts]
+arud = "scripts.arud_cli:main"
+
+[project.urls]
+Homepage = "https://github.com/cnemri/arud-skill"
+Repository = "https://github.com/cnemri/arud-skill"
+"Bug Tracker" = "https://github.com/cnemri/arud-skill/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts", "references", "examples"]
