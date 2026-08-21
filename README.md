@@ -6,6 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Skills.sh](https://img.shields.io/badge/Skills-Agent%20Standard-purple.svg)](https://skills.sh/)
 [![Powered by PyArud](https://img.shields.io/badge/Engine-PyArud%20v1.0-emerald.svg)](https://github.com/cnemri/pyarud)
 
 </div>
@@ -16,11 +17,70 @@
 
 `arud-skill` is a production-grade agent skill and CLI toolkit built on top of [`pyarud`](https://github.com/cnemri/pyarud) — the zero-dependency, high-throughput Farahidian dynamic programming scansion engine for Arabic poetry.
 
-It provides autonomous AI coding assistants (such as Google Antigravity, Gemini, Claude, Cursor) and human developers with immediate capabilities to:
+It provides autonomous AI coding assistants and agents (such as **Claude Code**, **Cursor**, **Cline**, **Roo Code**, **GitHub Copilot**, **Codex**, **Windsurf**, **Gemini**, **Antigravity**) and human developers with immediate capabilities to:
 - **Scan & Classify Arabic Meters**: Identify all 16 classical meters (البحور الستة عشر) and 29 sub-variations (*Tam, Majzoo, Mashtoor, Manhook, Mukhalla'*).
 - **Phonetic & Binary Transcription**: Perform exact Arudi writing (الكتابة العروضية) and generate binary prosodic strings (`1` for Mutaharrik, `0` for Sakin).
 - **Diagnose Poetic Defects**: Pinpoint broken feet (`ok`, `broken`, `missing`, `extra_bits`), classify single/double Zihafat (*Idmar, Khaban, Tay, Asab, Qabadh, Kaff, etc.*) and 'Ilal (*Hadhf, Qataf, Qataa, Batr, etc.*).
 - **Comprehensive Rhyme Analysis**: Extract the Rawi consonant and vocalization, identify Wasl, Khuruj, Ridf, Ta'sees, and Dakhil, and classify rhyme categories (*Al-Mutawatir, Al-Mutadarak, Al-Mutarakib, Al-Mutakawis, Al-Mutaradif*).
+
+---
+
+## 🤖 Installing the Skill for AI Agents (`npx skills`)
+
+`arud-skill` fully adheres to the universal open Agent Skill standard (`SKILL.md` format) and can be installed into any AI agent or IDE via the [`skills`](https://skills.sh/) CLI package manager.
+
+### 1. Universal One-Command Installation
+Install `arud-skill` directly into your workspace or across your system agents:
+
+```bash
+# Interactive installation (detects agents and prompts for target)
+npx skills add cnemri/arud-skill
+
+# Install globally for all supported agents on your machine
+npx skills add cnemri/arud-skill -g
+
+# Install to specific agents (e.g. Claude Code, Cursor, Cline, Roo Code)
+npx skills add cnemri/arud-skill --agent claude-code cursor cline roo-code
+
+# Headless / Non-interactive installation (for CI/CD or automated setups)
+npx skills add cnemri/arud-skill --all
+```
+
+### 2. Ephemeral / One-Shot Usage (Without Installation)
+You can pipe the skill's instructions and capabilities directly into a single agent prompt without installing it permanently:
+
+```bash
+# Pipe context directly to Claude Code CLI
+npx skills use cnemri/arud-skill@arud-skill | claude
+
+# Start an interactive agent session equipped with arud-skill
+npx skills use cnemri/arud-skill --skill arud-skill --agent claude-code
+```
+
+### 3. Managing & Updating Installed Skills
+```bash
+# List all installed skills (project or global)
+npx skills list
+npx skills list -g
+
+# Update arud-skill to the latest release
+npx skills update arud-skill -g
+
+# Remove the skill
+npx skills remove arud-skill
+```
+
+### 4. Supported Agents & Manual Path Locations
+If your tool does not use `skills` CLI, you can clone or copy this repository into your agent's standard skill directory:
+
+| Agent / IDE | Global Location | Project / Workspace Location |
+| :--- | :--- | :--- |
+| **Claude Code** | `~/.claude/skills/arud-skill` | `.claude/skills/arud-skill` |
+| **Cursor** | `~/.cursor/skills/arud-skill` | `.cursor/skills/arud-skill` |
+| **Cline / Roo Code** | `~/.cline/skills/arud-skill` | `.cline/skills/arud-skill` |
+| **GitHub Copilot / Codex** | `~/.config/skills/arud-skill` | `.agents/skills/arud-skill` |
+| **Antigravity / Gemini CLI** | `~/.gemini/config/skills/arud-skill` | `.agents/skills/arud-skill` |
+| **Hermes / Eve Agent** | `~/.hermes/skills/arud-skill` | `.hermes/skills/arud-skill` |
 
 ---
 
@@ -51,18 +111,18 @@ arud-skill/
 
 ---
 
-## 🚀 Quick Start | البدء السريع
+## 🚀 CLI Quick Start | البدء السريع عبر سطر الأوامر
 
-### 1. Prerequisites & Installation
+### 1. Setup & Installation
 
-Clone the repository and install with `uv` (recommended) or `pip`:
+Clone the repository and run with `uv` (recommended) or `pip`:
 
 ```bash
 # Clone the repository
 git clone https://github.com/cnemri/arud-skill.git
 cd arud-skill
 
-# Run with uv (zero setup required)
+# Run with uv (zero manual configuration required)
 uv run python scripts/arud_cli.py --help
 ```
 
@@ -156,15 +216,6 @@ print("Rawi:", q.rawi)                   # م
 print("Ridf:", q.ridf)                   # و
 print("Rhyme Type:", q.qafiyah_type_ar)  # المتواتر
 ```
-
----
-
-## 🤖 Antigravity / Agent Skill Installation
-
-To register `arud-skill` into your Antigravity or AI agent environment:
-
-1. Copy or link this folder into `.agents/skills/arud-skill` in your workspace or `~/.gemini/config/skills/arud-skill`.
-2. The agent will automatically discover `SKILL.md` and utilize `scripts/arud_cli.py` or the Python API during prosodic tasks.
 
 ---
 
