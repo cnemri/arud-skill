@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "pyarud>=1.0.0",
+# ]
+# ///
 """
 Example: Basic Arabic Verse and Hemistich Scansion.
 Demonstrates analyzing complete verses, single hemistichs, and printing pretty reports.

@@ -1,3 +1,10 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "pytest>=8.0.0",
+#     "pyarud>=1.0.0",
+# ]
+# ///
 """
 Automated unit tests for arud_cli.py subcommands.
 """

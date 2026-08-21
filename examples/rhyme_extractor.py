@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "pyarud>=1.0.0",
+# ]
+# ///
 """
 Example: Rhyme & Qafiyah Extraction.
 Demonstrates extracting Rawi, Wasl, Ridf, Ta'sees, Dakhil, and classical classifications.

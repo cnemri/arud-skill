@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "pyarud>=1.0.0",
+# ]
+# ///
 """
 PyArud CLI Utility (أداة سطر الأوامر لعلم العروض والقافية)
 Provides command-line prosodic scansion, meter detection, phonetic transcription,

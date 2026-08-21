@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "pyarud>=1.0.0",
+# ]
+# ///
 """
 Example: Defect Debugger & Broken Verse Diagnosis.
 Shows how to localize broken feet (Taf'ilat), missing syllables, or extra words.

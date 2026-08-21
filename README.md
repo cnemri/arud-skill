@@ -111,19 +111,23 @@ arud-skill/
 
 ---
 
-## 🚀 CLI Quick Start | البدء السريع عبر سطر الأوامر
+## 🚀 CLI Quick Start & Ephemeral Execution (`uv run`) | البدء السريع
 
-### 1. Setup & Installation
+All scripts in `arud-skill` (including [`scripts/arud_cli.py`](scripts/arud_cli.py) and all [`examples/`](examples/)) include **[PEP 723](https://peps.python.org/pep-0723/) Inline Script Metadata**. 
 
-Clone the repository and run with `uv` (recommended) or `pip`:
+This allows `uv` to automatically provision an ephemeral, isolated virtual environment on the fly with all dependencies (`pyarud>=1.0.0`) without requiring any manual virtualenv setup:
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/cnemri/arud-skill.git
 cd arud-skill
 
-# Run with uv (zero manual configuration required)
-uv run python scripts/arud_cli.py --help
+# 2. Run CLI commands ephemerally via uv (zero setup required)
+uv run scripts/arud_cli.py --help
+
+# 3. Or run any example directly
+uv run examples/basic_scansion.py
+uv run examples/poem_batch_analysis.py
 ```
 
 ---

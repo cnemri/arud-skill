@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "pyarud>=1.0.0",
+# ]
+# ///
 """
 Example: Poem Batch Analysis and Consensus Meter Determination.
 Analyzes multi-verse poems, computes meter homogeneity, and extracts dominant Rawi.

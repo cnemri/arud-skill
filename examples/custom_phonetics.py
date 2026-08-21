@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "pyarud>=1.0.0",
+# ]
+# ///
 """
 Example: Custom Phonetics and Arudi Extensions.
 Demonstrates registering custom spelling replacements and handling special words.
